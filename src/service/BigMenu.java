@@ -19,44 +19,56 @@ public class BigMenu {
         }
     }
 
-    public ArrayList<User> menuChucNangChinh(Scanner scanner, int choose, String userName, ArrayList<User> users, MenuDangNhapService menuDangNhapService) {
-        switch (choose) {
-            case 1:
-                System.out.println("username cu cua b la: " + userName);
-                System.out.println("nhap user name moi: ");
-                for (User user : users) {
-                    if (user.getUsername().equals(userName)) {
-                        user.setUsername(scanner.nextLine());
-                        System.out.println("username moi cua b la: "+user.getUsername());
-                    }
-                }
-                return users;
-            case 2:
-                System.out.println("nhap mat khau moi:");
-                for (User user : users) {
-                    if (user.getUsername().equals(userName)) {
-                        user.setPassword(menuDangNhapService.nhapLaiPass(scanner));
-                    }
-                }
-                return users;
-            case 3:
-                System.out.println("nhap email moi:");
-                for (User user : users) {
-                    if (user.getUsername().equals(userName)) {
-                        user.setEmail(menuDangNhapService.kiemTraGmail(scanner, users));
-                    }
-                }
-                return users;
-            case 4:
-                System.out.println("ban da dang xuat");
-                MenuMain menuMain = new MenuMain();
-                menuMain.dangNhap(scanner, menuDangNhapService, users);
-                break;
-            case 0:
-                System.out.println("thoat chuong trinh");
-                System.exit(0);
-                break;
-        }
-        return users;
-    }
+//    public ArrayList<User> menuChucNangChinh(Scanner scanner, int choose, String userName, ArrayList<User> users, MenuDangNhapService menuDangNhapService) {
+//        switch (choose) {
+//            case 1:
+//                System.out.println("username cũ của bạn là: " + userName);
+//                System.out.println("Nhập username mới: ");
+//                String newUsername = scanner.nextLine();
+//                for (User user : users) {
+//                    if (user.getUsername().equals(userName)) {
+//                        user.setUsername(newUsername);
+//                        userName = newUsername; // Cập nhật username của người dùng
+//                        System.out.println("Username mới của bạn là: " + userName);
+//                        break; // Sau khi tìm thấy và cập nhật username, thoát khỏi vòng lặp
+//                    }
+//                }
+//                break;
+//            case 2:
+//                System.out.println("Nhập mật khẩu mới:");
+//                String newPassword = menuDangNhapService.nhapLaiPass(scanner);
+//                for (User user : users) {
+//                    if (user.getUsername().equals(userName)) {
+//                        user.setPassword(newPassword);
+//                        System.out.println("Mật khẩu mới đã được cập nhật.");
+//                        break;
+//                    }
+//                }
+//                break;
+//
+//            case 3:
+//                System.out.println("Nhập email mới:");
+//                String newEmail = menuDangNhapService.kiemTraGmail(scanner, users);
+//                for (User user : users) {
+//                    if (user.getUsername().equals(userName)) {
+//                        user.setEmail(newEmail);
+//                        System.out.println("Email mới đã được cập nhật.");
+//                        break;
+//                    }
+//                }
+//                break;
+//
+//            case 4:
+//                System.out.println("Bạn đã đăng xuất.");
+//                MenuMain menuMain = new MenuMain();
+//                menuMain.dangNhap(scanner, menuDangNhapService, users);
+//                break;
+//
+//            case 0:
+//                System.out.println("Thoát chương trình.");
+//                System.exit(0);
+//                break;
+//        }
+//        return users;
+//    }
 }

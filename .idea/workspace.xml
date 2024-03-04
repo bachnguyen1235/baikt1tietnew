@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7dcd0946-99f4-41ea-a688-74570d3ad843" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/baikt1tiet.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entities/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/BigMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/MenuDangNhapService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/MenuMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/BigMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/BigMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/MenuMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MenuMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +91,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1709569116970</updated>
-      <workItem from="1709569118027" duration="669000" />
+      <workItem from="1709569118027" duration="2405000" />
     </task>
     <servers />
   </component>
