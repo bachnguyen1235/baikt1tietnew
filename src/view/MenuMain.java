@@ -10,9 +10,7 @@ import java.util.Scanner;
 public class MenuMain {
 
     public void menuDangNhapDangKy(Scanner scanner, MenuDangNhapService menuDangNhapService, BigMenu bigMenu, ArrayList<User> users) {
-        if (users == null) {
-            users = new ArrayList<>();
-        }
+
         System.out.println("==========DANG NHAP==========");
         System.out.println("1 -Dang nhap");
         System.out.println("2 -Dang ky");
@@ -25,9 +23,7 @@ public class MenuMain {
 
     public void dangNhap(Scanner scanner, MenuDangNhapService menuDangNhapService, ArrayList<User> users) {
 
-        if (users == null) {
-            users = new ArrayList<>();
-        }
+
         System.out.println("==========DANG NHAP==========");
         while (true) {
             System.out.println("moi nhap user:");
@@ -45,11 +41,8 @@ public class MenuMain {
 
     }
 
-    public void taotaikhoan(Scanner scanner, MenuDangNhapService menuDangNhapService, ArrayList<User> users) {
+    public void taotaikhoan(Scanner scanner, MenuDangNhapService menuDangNhapService,ArrayList<User> users) {
 
-        if (users == null) {
-            users = new ArrayList<>();
-        }
         User user = new User();
         System.out.println("==========Tạo tài khoản===========");
         System.out.println("nhap user name:");
@@ -79,11 +72,8 @@ public class MenuMain {
         }
     }
 
-    public void dangNhapThanhCong(Scanner scanner, String userName, ArrayList<User> users) {
+    public void dangNhapThanhCong(Scanner scanner, String userName,ArrayList<User> users) {
 
-        if (users == null) {
-            users = new ArrayList<>();
-        }
         MenuDangNhapService menuDangNhapService = new MenuDangNhapService();
         BigMenu bigMenu = new BigMenu();
         System.out.println("==========Chao mung " + userName + "==========");
