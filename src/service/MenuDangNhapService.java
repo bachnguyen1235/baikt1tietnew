@@ -26,7 +26,12 @@ public class MenuDangNhapService {
     }
 
     public boolean kiemTraDangNHap(String user, String pass, ArrayList<User> users, Scanner scanner, MenuDangNhapService menuDangNhapService) {
+
+        if (users == null) {
+            users = new ArrayList<>();
+        }
         MenuMain menuMain = new MenuMain();
+
         for (User item : users) {
             if (item.getUsername().equals(user)) {
                 if (item.getPassword().equals(pass)) {
@@ -61,6 +66,10 @@ public class MenuDangNhapService {
     }
 
     public String kiemTraUserOfList(Scanner scanner, ArrayList<User> users) {
+
+        if (users == null) {
+            users = new ArrayList<>();
+        }
         String username = "";
         while (true) {
             username = scanner.nextLine();
@@ -114,6 +123,10 @@ public class MenuDangNhapService {
     }
 
     public String kiemTraGmail(Scanner scanner, ArrayList<User> users) {
+
+        if (users == null) {
+            users = new ArrayList<>();
+        }
         String emailName = "";
         while (true) {
             emailName = scanner.nextLine();

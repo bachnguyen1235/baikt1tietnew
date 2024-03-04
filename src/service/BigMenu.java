@@ -8,6 +8,10 @@ import java.util.Scanner;
 
 public class BigMenu {
     public void bigmenu(String pick, Scanner scanner, MenuDangNhapService menuDangNhapService, ArrayList<User> users) {
+
+        if (users == null) {
+            users = new ArrayList<>();
+        }
         MenuMain menuMain = new MenuMain();
         switch (pick) {
             case "1":

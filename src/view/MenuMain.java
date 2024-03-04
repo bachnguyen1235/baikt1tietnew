@@ -10,7 +10,9 @@ import java.util.Scanner;
 public class MenuMain {
 
     public void menuDangNhapDangKy(Scanner scanner, MenuDangNhapService menuDangNhapService, BigMenu bigMenu, ArrayList<User> users) {
-
+        if (users == null) {
+            users = new ArrayList<>();
+        }
         System.out.println("==========DANG NHAP==========");
         System.out.println("1 -Dang nhap");
         System.out.println("2 -Dang ky");
@@ -22,6 +24,10 @@ public class MenuMain {
 
 
     public void dangNhap(Scanner scanner, MenuDangNhapService menuDangNhapService, ArrayList<User> users) {
+
+        if (users == null) {
+            users = new ArrayList<>();
+        }
         System.out.println("==========DANG NHAP==========");
         while (true) {
             System.out.println("moi nhap user:");
@@ -40,6 +46,10 @@ public class MenuMain {
     }
 
     public void taotaikhoan(Scanner scanner, MenuDangNhapService menuDangNhapService, ArrayList<User> users) {
+
+        if (users == null) {
+            users = new ArrayList<>();
+        }
         User user = new User();
         System.out.println("==========Tạo tài khoản===========");
         System.out.println("nhap user name:");
@@ -70,6 +80,10 @@ public class MenuMain {
     }
 
     public void dangNhapThanhCong(Scanner scanner, String userName, ArrayList<User> users) {
+
+        if (users == null) {
+            users = new ArrayList<>();
+        }
         MenuDangNhapService menuDangNhapService = new MenuDangNhapService();
         BigMenu bigMenu = new BigMenu();
         System.out.println("==========Chao mung " + userName + "==========");
@@ -83,59 +97,58 @@ public class MenuMain {
             System.out.println("lua chon cua ban la:");
             int choose = menuDangNhapService.nhapSoTuNhien(scanner, 0, 4);
 //            users= bigMenu.menuChucNangChinh(scanner, choose, userName, users, menuDangNhapService);
-                switch (choose) {
-                    case 1:
-                        System.out.println("username cũ của bạn là: " + userName);
-                        System.out.println("Nhập username mới: ");
-                        String newUsername = scanner.nextLine();
-                        for (User user : users) {
-                            if (user.getUsername().equals(userName)) {
-                                user.setUsername(newUsername);
-                                userName = newUsername; // Cập nhật username của người dùng
-                                System.out.println("Username mới của bạn là: " + userName);
-                                break; // Sau khi tìm thấy và cập nhật username, thoát khỏi vòng lặp
-                            }
+            switch (choose) {
+                case 1:
+                    System.out.println("username cũ của bạn là: " + userName);
+                    System.out.println("Nhập username mới: ");
+                    String newUsername = scanner.nextLine();
+                    for (User user : users) {
+                        if (user.getUsername().equals(userName)) {
+                            user.setUsername(newUsername);
+                            userName = newUsername; // Cập nhật username của người dùng
+                            System.out.println("Username mới của bạn là: " + userName);
+                            break; // Sau khi tìm thấy và cập nhật username, thoát khỏi vòng lặp
                         }
-                        break;
-                    case 2:
-                        System.out.println("Nhập mật khẩu mới:");
-                        String newPassword = menuDangNhapService.nhapLaiPass(scanner);
-                        for (User user : users) {
-                            if (user.getUsername().equals(userName)) {
-                                user.setPassword(newPassword);
-                                System.out.println("Mật khẩu mới đã được cập nhật.");
-                                break;
-                            }
+                    }
+                    break;
+                case 2:
+                    System.out.println("Nhập mật khẩu mới:");
+                    String newPassword = menuDangNhapService.nhapLaiPass(scanner);
+                    for (User user : users) {
+                        if (user.getUsername().equals(userName)) {
+                            user.setPassword(newPassword);
+                            System.out.println("Mật khẩu mới đã được cập nhật.");
+                            break;
                         }
-                        break;
+                    }
+                    break;
 
-                    case 3:
-                        System.out.println("Nhập email mới:");
-                        String newEmail = menuDangNhapService.kiemTraGmail(scanner, users);
-                        for (User user : users) {
-                            if (user.getUsername().equals(userName)) {
-                                user.setEmail(newEmail);
-                                System.out.println("Email mới đã được cập nhật.");
-                                break;
-                            }
+                case 3:
+                    System.out.println("Nhập email mới:");
+                    String newEmail = menuDangNhapService.kiemTraGmail(scanner, users);
+                    for (User user : users) {
+                        if (user.getUsername().equals(userName)) {
+                            user.setEmail(newEmail);
+                            System.out.println("Email mới đã được cập nhật.");
+                            break;
                         }
-                        break;
+                    }
+                    break;
 
-                    case 4:
-                        System.out.println("Bạn đã đăng xuất.");
-                        MenuMain menuMain = new MenuMain();
-                        menuMain.dangNhap(scanner, menuDangNhapService, users);
-                        break;
+                case 4:
+                    System.out.println("Bạn đã đăng xuất.");
+                    MenuMain menuMain = new MenuMain();
+                    menuMain.dangNhap(scanner, menuDangNhapService, users);
+                    break;
 
-                    case 0:
-                        System.out.println("Thoát chương trình.");
-                        System.exit(0);
-                        break;
-                }
-            scanner.nextLine();
+                case 0:
+                    System.out.println("Thoát chương trình.");
+                    System.exit(0);
+                    break;
+            }
             System.out.println("ban co muon chon nua khong? (y/n)");
             String chon = scanner.nextLine();
-            if (chon.equalsIgnoreCase("N")){
+            if (chon.equalsIgnoreCase("N")) {
                 break;
             }
         }
